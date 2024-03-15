@@ -1,0 +1,943 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.botonDropdown{
+  background-color: #0c1b30 !important;
+  border-color: #0c1b30 !important;
+}
+
+.btnAddTables{
+  background-color: #282c35 !important;
+  border-color: #282c35 !important;
+}
+
+.generaltablaOrdenes {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tablaServiciosOrdenes, .tablaRequisicionCompras {
+  overflow-x: auto;
+  margin-bottom: 0.5rem;
+}
+
+.titulo {
+  text-align: center;
+}
+
+.checksDiv {
+  display: grid;
+  grid-template-areas: "colorP tonosC";
+}
+
+.lblColSer {
+  grid-area: colorP;
+}
+
+.lblTonosSer {
+  grid-area: tonosC;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  /* Opcional: Alinear verticalmente al centro si es necesario */
+  align-items: center;
+}
+
+.button-container Button {
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.divTabla {
+  padding: 1rem;
+  text-align: center !important;
+}
+
+.MuiToolbar-root {
+  background-color: #9c182d; /* Cambia el color de fondo a azul */
+  color: #fff; /* Cambia el color del texto a blanco */
+}
+
+.MuiTableRow-root {
+  background-color: rgba(211, 211, 211, 0.267);
+}
+
+.MuiTablePagination-toolbar {
+  background-color: rgba(211, 211, 211, 0);
+  color: #282c35;
+}
+
+.imagenesServicio {
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imagenesServicio p {
+  margin-top: -2rem;
+  text-align: center;
+}
+
+.imagenesServicio div {
+  margin-right: 1rem;
+}
+
+.btnadd {
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  margin-left: 0.7rem;
+  background-color: #2ba8fb;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.divButton {
+  text-align: right;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.btnadd:hover {
+  background-color: #6fc5ff;
+  -webkit-box-shadow: 10px 10px 13px -11px rgba(56, 147, 222, 1);
+  -moz-box-shadow: 10px 10px 13px -11px rgba(56, 147, 222, 1);
+  box-shadow: 10px 10px 13px -11px rgba(56, 147, 222, 1);
+  transform: scale(1.1);
+}
+
+.btnadd:active {
+  background-color: #3d94cf;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+.submit {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  border-radius: 100px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  box-shadow: 2px #329af0;
+  background-color: #2196f3;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+
+.submit span:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #2196f3;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.submit span:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.submit:hover {
+  color: #2196f3;
+  background-color: #8bc4f3;
+  -webkit-box-shadow: 10px 10px 16px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 16px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 16px -3px rgba(0, 0, 0, 0.75);
+}
+
+.submit:active {
+  scale: 0.95;
+}
+
+.submit:hover span:last-child {
+  width: 150px;
+  height: 150px;
+  opacity: 1;
+}
+
+.divSubmit {
+  text-align: center;
+}
+
+.formgeneral {
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  text-align: left;
+  display: grid;
+  grid-template-areas:
+    "form1 form1 form1"
+    "form2 form2 form2"
+    "form3 formImagen1 formImagen2"
+    "form4 form4 form4"
+    "form5 form5 form5";
+}
+
+.form1 {
+  grid-area: form1;
+}
+
+.form2 {
+  grid-area: form2;
+  display: grid;
+  grid-template-areas:
+    "fecha localidad doctor"
+    "inpFecha txtLocalidad slcDoctor"
+    "descripcion descripcion descripcion";
+}
+
+.form3 {
+  grid-area: form3;
+  padding: 1rem;
+}
+
+.form4 {
+  grid-area: form4;
+  display: grid;
+  grid-template-areas: "select1 select2 select3";
+}
+
+.formImagen1 {
+  grid-area: formImagen1;
+}
+
+.formImagen2 {
+  grid-area: formImagen2;
+}
+
+.checkMaterial {
+  max-width: 250px;
+  text-align: left;
+  justify-content: left;
+  margin-left: 2rem;
+}
+
+.inpFecha {
+  max-width: 70%;
+}
+
+.txtLocalidad {
+  max-width: 80%;
+}
+
+.slcDoctor {
+  max-width: 95%;
+}
+
+.lblDoctorOrden {
+  margin-top: 1rem;
+  grid-area: doctor;
+}
+
+.lblLocalidadOrden {
+  margin-top: 1rem;
+  grid-area: localidad;
+}
+
+.lblFechaOrden {
+  margin-top: 1rem;
+  grid-area: fecha;
+}
+
+.lblDescripcionOrden {
+  margin-top: 1rem;
+  grid-area: descripcion;
+}
+
+.txtDescripcionOrden {
+  margin-bottom: 1rem;
+}
+
+.slc1 {
+  grid-area: select1;
+  padding: 1rem;
+}
+
+.slc2 {
+  grid-area: select2;
+  margin-top: 0.5vw;
+  padding: 1rem;
+}
+
+.slc3 {
+  grid-area: select3;
+  margin-top: 0.5vw;
+  padding: 1rem;
+}
+
+.generalEstablecimiento {
+  padding: 0.7rem;
+}
+
+.contactoCli {
+  display: grid;
+  grid-template-areas: "tel correo";
+  grid-gap: 1vw;
+  grid-row-gap: 0;
+}
+
+.dom1Cli {
+  display: grid;
+  grid-template-areas: "calle nExt nInt";
+  grid-gap: 1vw;
+  grid-row-gap: 0;
+}
+
+.dom2Cli {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "colonia estado municipio";
+  grid-gap: 1vw;
+  grid-row-gap: 0;
+}
+
+.colonia {
+  grid-area: colonia;
+}
+
+.estadoCli {
+  grid-area: estado;
+}
+
+.municipioCli {
+  grid-area: municipio;
+}
+
+.lblCalle {
+  grid-area: calle;
+}
+
+.lblnExt {
+  grid-area: nExt;
+}
+
+.lblnInt {
+  grid-area: nInt;
+}
+
+.dom3Cli {
+  display: grid;
+  grid-template-areas: "cp esq";
+  grid-gap: 1vw;
+  grid-row-gap: 0;
+}
+
+.lblCP {
+  grid-area: cp;
+}
+
+.lblTelefono {
+  grid-area: tel;
+}
+
+.inpTelefono {
+  -webkit-appearance: textfield !important;
+  margin: 0;
+  -moz-appearance: textfield !important;
+}
+.lblEsquina {
+  grid-area: esq;
+}
+
+.lblEmail {
+  grid-area: correo;
+}
+
+.lblHorario {
+  grid-area: horario;
+}
+
+.generalDoctores {
+  padding: 0.2rem;
+}
+
+.datosPersonalesDoc {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "pApellido sApellido";
+  grid-gap: 1vw;
+  grid-row-gap: 0;
+}
+
+.lblpApellido {
+  grid-area: pApellido;
+}
+
+.lblsApellido {
+  grid-area: sApellido;
+}
+
+.datosDoctores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "nacimiento rfc";
+  grid-gap: 1vw;
+  grid-row-gap: 0;
+}
+
+.lblFechaDoc {
+  grid-area: nacimiento;
+}
+
+.lblRFCDoc {
+  grid-area: rfc;
+}
+
+.contactoDoc {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "celular correo";
+  grid-gap: 1vw;
+  grid-row-gap: 0;
+}
+
+.lblTelefonoDoc {
+  grid-area: celular;
+}
+
+.lblCorreoDoc {
+  grid-area: correo;
+}
+
+.facturacionGeneral {
+  padding: 0.7rem;
+}
+
+.dom1Facturacion {
+  display: grid;
+  grid-template-areas: "calleF extF intF";
+  grid-gap: 2vw;
+  grid-row-gap: 0;
+}
+
+.lblCalleFact {
+  grid-area: calleF;
+}
+
+.lblNumExtFact {
+  grid-area: extF;
+}
+
+.lblNumIntFact {
+  grid-area: intF;
+}
+
+.dom2Facturacion {
+  display: grid;
+  grid-template-areas: "cpF colF munF";
+  grid-gap: 2vw;
+  grid-row-gap: 0;
+}
+
+.lblCPFact {
+  grid-area: cpF;
+}
+
+.lblColoniaFact {
+  grid-area: colF;
+}
+
+.lblMunicipioFact {
+  grid-area: munF;
+}
+
+.pedidosPL {
+  display: grid;
+  grid-template-areas: "pStock sMinimo";
+  grid-gap: 1vw;
+  grid-row-gap: 0;
+}
+
+.lblPedidoStock {
+  grid-area: pStock;
+}
+
+.lblPedidoMinimo {
+  grid-area: sMinimo;
+}
+
+.stockPL {
+  display: grid;
+  grid-template-areas: "stMinimo stMaximo";
+  grid-gap: 1vw;
+  grid-row-gap: 0;
+}
+
+.lblStockMinimo {
+  grid-area: stMinimo;
+}
+
+.lblStockMaximo {
+  grid-area: stMaximo;
+}
+
+.generalColorimetria,
+.generalPrecios,
+.generalSerDentales {
+  padding: 0.5rem;
+}
+
+.generalReq {
+  padding: 0.7rem;
+}
+
+.formReq1 {
+  display: grid;
+  grid-template-areas: "folioReq statusReq fechaReq";
+  grid-gap: 2vw;
+  grid-row-gap: 0;
+}
+
+.lblfolio {
+  grid-area: folioReq;
+}
+
+.lblStatus {
+  grid-area: statusReq;
+}
+
+.lblFecha {
+  grid-area: fechaReq;
+}
+
+.formReq2 {
+  display: grid;
+  grid-template-areas: "nombreReq departamentoReq";
+  grid-gap: 2vw;
+  grid-row-gap: 0;
+  margin-bottom: 2rem;
+}
+
+.lblSolicitante {
+  grid-area: nombreReq;
+}
+
+.lblDepartamento {
+  grid-area: departamentoReq;
+}
+
+.btnModal {
+  margin-bottom: 0.5rem;
+}
+
+.totales {
+  text-align: right;
+}
+
+.lbltotal {
+  padding-bottom: 0%;
+  align-items: end;
+}
+
+.inpTotalSol {
+  max-width: 10rem;
+  float: right;
+}
+
+h1 {
+  text-align: center;
+}
+
+.checkbox-container {
+  display: grid;
+  grid-template-columns: repeat(8, 3rem);
+  gap: 0.5rem;
+}
+
+.divBotonesC {
+  display: grid;
+  grid-template-areas: "chk1 chk2";
+}
+
+.check1 {
+  grid-area: chk1;
+}
+
+.check2 {
+  grid-area: chk2;
+}
+
+.chkModDental {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.imgTipoOS{
+  width: 100%;
+}
+
+.textTipoDentOS {
+  grid-area: textTipo;
+  display: flex;
+  align-items: center;
+  height: 50%;
+}
+
+
+.containerCanvasMap {
+  position: relative;
+  padding: 50%;
+  width: 100%;
+  height: auto;
+  padding-bottom: 75%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1;
+}
+
+.canvas-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+
+.containerMapImage {
+  position: relative;
+  width: 100%; /* Ajusta el ancho al 100% para que el contenedor sea responsive */
+  padding-bottom: 60%; /* Ajusta la altura relativa al ancho (60% en este caso) para que el canvas sea responsive */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.generalRutas{
+  margin: 1vw;
+}
+
+.main-header{
+  background-color: #0c1b30;
+  color: #fff;
+}
+.navbar-nav{
+  color: #fff;
+}
+
+.main-sidebar {
+  background-color: #0c1b30;
+  height: 100%;
+}
+
+.barMenuElements{
+  max-height: 95vh !important;
+  overflow: scroll;
+  scrollbar-width: none !important;
+}
+
+.modal-header {
+  background-color: #9c182d;
+  color: #fff;
+}
+
+.content-wrapper {
+  max-height: 100vh;
+  overflow: scroll;
+  scrollbar-width: none !important;
+}
+
+.barraPrincipal {
+  background-color: #0c1b30;
+}
+
+.nav-link i{
+  color: #fff;
+}
+
+.logoPrincipal {
+  max-width: 4rem;
+  max-height: 3.5rem;
+  margin-bottom: 0%;
+  margin-top: 0%;
+}
+
+.MuiSvgIcon-root {
+  color: #b3b3b3;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  width: 97.5%;
+  text-align: center;
+  font-size: 18px;
+  margin: 1rem;
+  box-shadow: 5px 5px 15px gray;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerPrincipal {
+  background-color: #282c34;
+}
+
+.footerPrincipal div {
+  text-align: center;
+  color: white;
+}
+
+.errorSesionBody{
+  
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.error-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-text {
+  font-size: 5em;
+  color: #f00;
+  margin-bottom: 20px;
+}
+
+.error-title {
+  color: #f00;
+  font-size: 3em;
+  margin-bottom: 10px;
+  font-family: Consolas;
+  font-weight: bolder;
+}
+
+.error-message {
+  font-size: 1.2em;
+  color: #333; 
+  margin-bottom: 20px;
+  
+}
+
+.error-link {
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.error-link:hover {
+  color: #02448b; 
+}
+
+.principalError {
+  background-color: rgb(183, 183, 183);
+  width: 100%;
+  height: 90vh;
+}
+
+.errorMessage {
+  background-color: rgb(183, 183, 183);
+  color: white;
+  display: grid;
+  grid-template-areas:
+    "imagen imagen"
+    "imagenError texto";
+  align-items: center;
+  justify-content: center;
+}
+
+.imagenbajaError {
+  grid-area: imagen;
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.imagen404 {
+  width: 10vw;
+  height: 10vw;
+}
+
+.imgError {
+  width: 100%;
+  grid-area: imagenError;
+  text-align: right;
+}
+
+.imagenError {
+  width: 5vw;
+  height: 6vw;
+  margin-top: 3rem;
+}
+
+.errorText {
+  grid-area: texto;
+  height: 6vw;
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.errorText h3 {
+  font-weight: bold;
+  font-family: Consolas;
+  text-align: center;
+  color: #0c1b30;
+}
+
+.botonesAccion {
+  display: flex;
+}
+
+.btnDelete {
+  margin-right: 0.2rem;
+}
+
+.perfilCierreBarra{
+  width: 100%;
+}
+
+.perfilCierreBarra Button{
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-color: #fff;
+}
+
+.btn-link{
+  color: #fff;
+  font-weight: bold;
+}
+
+.iconoCerrarS{
+  color: red;
+}
+
+.inicioNav{
+  background-color: #9c182d !important;
+}
+
+.tss-1vd39vz-MUIDataTableBodyCell-stackedCommon {
+  text-align: center !important;
+}
+
+.tss-178gktx-MUIDataTableHeadCell-contentWrapper {
+  justify-content: center !important;
+}
+
+.css-1ex1afd-MuiTableCell-root {
+  text-align: center !important;
+}
+
+.css-1ygcj2i-MuiTableCell-root {
+  text-align: center !important;
+  text-transform: uppercase;
+}
+
+.tss-1cdcmys-MUIDataTable-responsiveBase{
+  max-height: 60vh !important;
+}
+
+.css-q34dxg{
+  text-align: center !important;
+
+}
+
+.tss-1t6h0i4-MUIDataTableToolbar-titleRoot{
+  text-align: left;
+}
+
+@media screen and (max-width: 990px) {
+  .sidebar-open .menuH{
+    margin-left: 32%;
+  }
+  
+  .content-wrapper{
+    min-height: 60vh !important;
+  }
+
+}
+
+@media screen and (max-width: 770px) {
+  .sidebar-open .menuH{
+    margin-left: 62%;
+  }
+  
+}
